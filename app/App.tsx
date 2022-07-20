@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { NativeBaseProvider } from 'native-base';
+// import { StatusBar } from 'expo-status-bar';
+import { NativeBaseProvider, StatusBar } from 'native-base';
 import { SignIn } from './src/pages/SignIn';
 import { THEME } from './src/styles/theme';
 import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
@@ -12,7 +12,11 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={THEME}>
-      <StatusBar style="inverted" />
+      <StatusBar
+        barStyle='light-content'
+        backgroundColor="transparent"
+        translucent
+      />
       {fontsLoaded ? <SignIn /> : <Loading />}
 
     </NativeBaseProvider>

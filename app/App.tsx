@@ -1,21 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider } from 'native-base';
+import { SignIn } from './src/pages/SignIn';
+import { THEME } from './src/styles/theme';
+import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
+import { Loading } from './src/components/Loading';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold })
+
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider theme={THEME}>
+      <StatusBar style="inverted" />
+      {fontsLoaded ? <SignIn /> : <Loading />}
+
+    </NativeBaseProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

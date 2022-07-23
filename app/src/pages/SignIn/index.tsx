@@ -28,7 +28,7 @@ export const SignIn = () => {
 
                 if (error.code === 'auth/invalid-email' || error.code === 'auth/wrong-password') {
 
-                    return toast.show({ placement: 'top', description: 'E-mail ou password invalido', duration: 4000 })
+                    return toast.show({ placement: 'top', description: 'E-mail ou password inválido', duration: 4000 })
                 }
 
                 if (error.code === 'auth/user-not-found') {

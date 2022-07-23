@@ -42,10 +42,8 @@ export const Home = () => {
                 pb={5}
                 pt={12}
                 px={6}
-
             >
                 <Logo />
-
                 <IconButton
                     onPress={handleLogout}
                     icon={<SignOut color={colors.gray[300]} size={26} />}
@@ -99,10 +97,6 @@ export const Home = () => {
                 }
                 <Button title='Nova Solicitação' onPress={handleNewOrder} />
             </VStack>
-
-
-
-
 
         </VStack>
     );
